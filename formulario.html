@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Datos - IISP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registro de Datos - IISP</h2>
+        <form action="{{ url_for('guardar') }}" method="post">
+            <label for="Nombre">Nombre:</label>
+            <input type="text" id="Nombre" name="Nombre" required>
+
+            <label for="Apellido">Apellido:</label>
+            <input type="text" id="Apellido" name="Apellido" required>
+
+            <label for="Edad">Edad:</label>
+            <input type="number" id="Edad" name="Edad" required>
+
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" required>
+
+            <label for="Curso">Curso:</label>
+            <select id="Curso" name="Curso">
+                <option value="Matemáticas">Matemáticas</option>
+                <option value="Ciencias">Ciencias</option>
+                <option value="Historia">Historia</option>
+                <option value="Programación">Programación</option>
+            </select>
+
+            <label for="Semestre">Semestre:</label>
+            <select id="Semestre" name="Semestre">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+</body>
+</html>
